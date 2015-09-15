@@ -88,12 +88,10 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
         beforeEach(function(done) {
-            // Firstly clear the .feed div to remove previous loaded feeds
+            // Clear the .feed div to remove previous loaded feeds
             $('.feed').empty();
-            // Create a random feedId between 0 and 3
-            var feedId = Math.round(3 * Math.random());
-            // Use the feedId to load feed
-            loadFeed(feedId, done);
+            // Initially the first feed is load (index 0)
+            loadFeed(0, done);
         });
 
         it('loads at least one entry within the .feed container', function() {
