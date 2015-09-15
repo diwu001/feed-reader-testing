@@ -40,4 +40,7 @@ You will learn how to use Jasmine to write a number of tests against a pre-exist
 
 # How to run the project
 
-Open index.html by browser and check the jasmine test results
+Open index.html by browser and check the jasmine test results  
+
+Author: Tina D. Wu  
+Date: 09 / 15 / 2015

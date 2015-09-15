@@ -88,24 +88,63 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
         beforeEach(function(done) {
-            // Clear the .feed div to remove previous loaded feeds
+            /* Clear the .feed div to remove previously loaded feeds */
             $('.feed').empty();
-            // Initially the first feed is load (index 0)
+            /* Initially the first feed is load (index 0) */
             loadFeed(0, done);
         });
 
         it('loads at least one entry within the .feed container', function() {
-            // Get the number of the elements with .entry class 
+            /* Get the number of the elements with .entry class */
             var len = $('.entry').length;
-            // len should be greater than 0, which means that there is at least one entry
+            /* len should be greater than 0, which means that there is at least one entry */
             expect(len).toBeGreaterThan(0);
         });
     });
 
     
-    /* TODO: Write a new test suite named "New Feed Selection"
+    /* TODO: Write a new test suite named "New Feed Selection" */
+    describe('New Feed Selection', function() {
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+        /* Randomly generate an id as the previous feed id. The id is between 0 and 3*/
+        var preFeedId = Math.round(3 * Math.random()); 
+
+        /* Randomly generate an id as the current feed id. The id is between 0 and 3 */
+        var curFeedId = Math.round(3 * Math.random()); 
+       /* Current feed id should not be different from previous feed id */
+        while(curFeedId === preFeedId) {        
+            curFeedId = Math.round(3 * Math.random()); 
+        }
+        
+        var preFeed;
+        beforeEach(function(done) {
+            /* Run the loadFeed() to load the feed with preeFeedId */
+            loadFeed(preFeedId);
+           
+            /* Get the first feed for comparison purposes */
+            preFeed = $('.feed').html();
+
+            /* Clear the .feed div to remove previously loaded feeds */
+            $('.feed').empty();
+
+            /* Run the loadFeed() again to load the feed with curFeedId, which is a different from preFeedId */
+            loadFeed(curFeedId, done);
+        });
+
+        /* This test ensures that a new feed is loaded by the loadFeed function that the content actually changes */
+         it('changes feeds content', function() {
+            /* Get the current feed's html */
+            var curFeed = $('.feed').html();
+
+            /* Make sure the curFeed variable has been defined and it is not empty */
+            expect(curFeed).toBeDefined();
+            expect(curFeed.length).not.toBe(0);
+             
+            /* Make sure the curFeed does not equal to the preFeed */
+            expect(curFeed).not.toEqual(preFeed);
+        });
+    });
 }());
