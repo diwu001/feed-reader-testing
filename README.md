@@ -5,7 +5,7 @@ In this project a web-based application that reads RSS feeds is tested. Several 
 
 # Test suites in the project
 
-1 Test suite "RSS Feeds"  
+1. Test suite "RSS Feeds"  
   - A test that ensures all RSS feeds are defined.  
   - A test that ensures all feeds url are defined and not empty.  
   - A test that ensures all feeds names are defined and not empty.  
