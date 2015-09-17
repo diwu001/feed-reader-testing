@@ -5,6 +5,8 @@ In this project a web-based application that reads RSS feeds is tested. Several 
 
 # Test suites in the project
 
+Test suites can be found at jasmine/spec/feedreader.js  
+
 1. Test suite "RSS Feeds"  
   - A test that ensures all RSS feeds are defined.  
   - A test that ensures all feeds url are defined and not empty.  
@@ -23,7 +25,7 @@ In this project a web-based application that reads RSS feeds is tested. Several 
 
 # How to run the project
 
-Open index.html by browser and check the jasmine test results.  
+Open index.html by browser and check the jasmine test results.
 
 Author: Tina D. Wu  
 Date: 09 / 17 / 2015
