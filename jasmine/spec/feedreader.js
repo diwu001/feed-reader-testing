@@ -19,7 +19,7 @@ $(function() {
             expect(allFeeds.length).not.toBe(0);
         });
 
-        /* This test loops through each feed in the allFeeds object 
+        /* This test loops through each feed in the allFeeds object
          * and ensures it has a URL defined and that the URL is not empty.
          */
         it('all feeds url are defined and not empty', function() {
@@ -93,13 +93,13 @@ $(function() {
          * the content actually changes.
          */
         /* Randomly generate an id as the previous feed id. The id is between 0 and 3*/
-        var preFeedId = Math.round(3 * Math.random()); 
+        var preFeedId = Math.round(3 * Math.random());
 
         /* Randomly generate an id as the current feed id. The id is between 0 and 3 */
-        var curFeedId = Math.round(3 * Math.random()); 
+        var curFeedId = Math.round(3 * Math.random());
        /* Current feed id should be different from previous feed id */
-        while(curFeedId === preFeedId) {        
-            curFeedId = Math.round(3 * Math.random()); 
+        while(curFeedId === preFeedId) {
+            curFeedId = Math.round(3 * Math.random());
         }
 
         var preFeed;
@@ -114,10 +114,10 @@ $(function() {
                 feedElement.empty();
 
                 /* Run the loadFeed() again to load the feed with curFeedId, 
-                * which is a different from preFeedId 
+                * which is a different from preFeedId
                 */
                 loadFeed(curFeedId, done);
-            });    
+            });
         });
 
         /* When a new feed is loaded by the loadFeed function, the content actually changes */
