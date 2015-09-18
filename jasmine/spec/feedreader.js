@@ -15,6 +15,7 @@ $(function() {
          */
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
+            expect(Array.isArray(allFeeds)).toBeTruthy();
             expect(allFeeds.length).not.toBe(0);
         });
 
@@ -24,6 +25,7 @@ $(function() {
         it('all feeds url are defined and not empty', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.url).toBeDefined();
+                expect($.type(feed.url) === "string").toBeTruthy();
                 expect(feed.url.length).not.toBe(0);
             });
         });
@@ -34,6 +36,7 @@ $(function() {
         it('all feeds names are defined and not empty', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.name).toBeDefined();
+                expect($.type(feed.name) === "string").toBeTruthy();
                 expect(feed.name.length).not.toBe(0);
             });
         });
@@ -79,6 +82,7 @@ $(function() {
         it('loads at least one entry within the .feed container', function() {
             /* Get the number of the elements with .entry class */
             var len = $('.entry').length;
+
             /* len should be greater than 0, which means that there is at least one entry */
             expect(len).toBeGreaterThan(0);
         });
@@ -123,6 +127,7 @@ $(function() {
 
             /* Make sure the curFeed variable has been defined and it is not empty */
             expect(curFeed).toBeDefined();
+            expect($.type(curFeed) === "string").toBeTruthy();
             expect(curFeed.length).not.toBe(0);
 
             /* Make sure the curFeed does not equal to the preFeed */
