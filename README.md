@@ -25,7 +25,7 @@ Test suites can be found at jasmine/spec/feedreader.js
 
 # How to run the project
 
-Open index.html by browser and check the jasmine test results.
+Visit http://diwu001.github.io/projects/feed-reader-testing/index.html to check the jasmine test results.
 
 Author: Tina D. Wu  
 Date: 09 / 17 / 2015
